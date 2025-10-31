@@ -1,0 +1,44 @@
+:root{
+  --bg:#0f1724; --card:#0b1220; --accent:#0b6efd; --muted:#98a0b3; --glass: rgba(255,255,255,0.03);
+  --success:#2ea44f; --warn:#f1a10a; --danger:#d43f3a;
+  --maxw:980px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#071028 0%, #0f1724 100%);font-family:Inter,system-ui,Arial;color:#e6eef8;min-height:100vh}
+.container{max-width:var(--maxw);margin:18px auto;padding:0 16px}
+.topbar{padding:14px 0 8px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:44px;height:44px;border-radius:8px}
+.brand h1{margin:0;font-size:20px}
+.tag{margin:8px 0 0;color:var(--muted);font-size:13px}
+
+.panel{background:var(--card);padding:18px;border-radius:12px;margin-top:18px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.tiny{font-size:13px}
+
+textarea{width:100%;min-height:140px;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:15px;outline:none;resize:vertical}
+.controls{display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.small select, .small input{background:transparent;border:1px solid rgba(255,255,255,0.04);color:inherit;padding:8px;border-radius:8px}
+.buttons{margin-left:auto;display:flex;gap:8px}
+button{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+.primary{background:linear-gradient(90deg,var(--accent),#1ea7ff);color:white;box-shadow:0 6px 18px rgba(11,110,253,0.12)}
+.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:inherit}
+
+.hidden{display:none}
+
+.resultHeader{display:flex;justify-content:space-between;align-items:center}
+.scoreLarge{font-size:38px;font-weight:800}
+.verdict{font-size:15px;margin-top:4px;color:var(--muted)}
+
+.reasons{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:var(--glass);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+.detailsCard{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;margin-top:10px;border:1px solid rgba(255,255,255,0.02)}
+.detailItem{padding:10px;border-radius:8px;background:rgba(255,255,255,0.01);margin-top:10px}
+
+.small.muted ul{padding-left:18px;margin:8px 0}
+footer{margin:22px 0 40px;text-align:center;color:var(--muted);font-size:13px}
+@media (max-width:720px){
+  .resultHeader{flex-direction:column;align-items:flex-start;gap:12px}
+  .buttons{margin-left:0}
+}

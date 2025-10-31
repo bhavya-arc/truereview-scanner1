@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TrueReview — Fake Review Detector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36'><rect rx='6' width='36' height='36' fill='%230b6efd'/><text x='50%' y='55%' font-size='18' text-anchor='middle' fill='white' font-family='Arial'>TR</text></svg>" alt="logo" class="logo">
+        <h1>TrueReview</h1>
+      </div>
+      <p class="tag">Free • Privacy-first • Browser-only</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Paste reviews (one or multiple)</h2>
+      <p class="muted">Paste one review or multiple reviews separated by a blank line. Supports English & Hindi heuristics.</p>
+
+      <textarea id="input" placeholder="Paste review text here..."></textarea>
+
+      <div class="controls">
+        <label class="small">Mode:
+          <select id="mode">
+            <option value="single">Single / Quick</option>
+            <option value="multi">Multi-review aggregate</option>
+          </select>
+        </label>
+
+        <label class="small">Intensity:
+          <input id="sensitivity" type="range" min="1" max="3" value="2">
+        </label>
+
+        <div class="buttons">
+          <button id="analyzeBtn" class="primary">Analyze</button>
+          <button id="clearBtn" class="ghost">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultPanel" class="panel hidden">
+      <div class="resultHeader">
+        <div>
+          <div id="overallScore" class="scoreLarge">—</div>
+          <div id="overallVerdict" class="verdict">—</div>
+        </div>
+        <div>
+          <button id="copyBtn" class="ghost">Copy Report</button>
+          <a id="shareBtn" class="ghost" href="#" target="_blank" rel="noopener">Share</a>
+        </div>
+      </div>
+
+      <div id="reasons" class="reasons"></div>
+
+      <hr>
+
+      <div id="details"></div>
+    </section>
+
+    <section class="panel tiny muted">
+      <h4>How it works</h4>
+      <ul>
+        <li>Runs local heuristics + language-specific rules (English & Hindi).</li>
+        <li>Gives a <strong>Fake Score (0–100%)</strong> and explainable reasons.</li>
+        <li>Conservative by design — it flags suspicious reviews (not legal claims).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container muted small">
+    Built by Bhavya • Privacy-first — text never leaves your browser.
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
